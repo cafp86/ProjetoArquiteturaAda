@@ -1,6 +1,8 @@
 package tech.ada.cadastrousuario.service;
 
 import jakarta.persistence.EntityNotFoundException;
+import jakarta.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import tech.ada.cadastrousuario.model.dto.ClienteDTO;
@@ -33,7 +35,7 @@ public class ClienteServiceImp implements ClienteService<ClienteDTO>{
         throw new EntityNotFoundException();
     }
 
-    public ClienteDTO cadastrarCliente(ClienteDTO clienteDTO){
+    public ClienteDTO cadastrarCliente(@Valid ClienteDTO clienteDTO){
         Cliente cliente = mapper.parseEntity(clienteDTO);
         cliente.setId(null);
         repository.save(cliente);
