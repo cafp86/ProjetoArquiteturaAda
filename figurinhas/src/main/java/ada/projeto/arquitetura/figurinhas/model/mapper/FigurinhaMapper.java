@@ -8,20 +8,25 @@ import java.util.List;
 
 @Component
 public class FigurinhaMapper {
-    public FigurinhaDTO toDTO(FigurinhaEntity figurinha){
+
+    public FigurinhaDTO toDTO(FigurinhaEntity figurinha) {
+
         FigurinhaDTO figurinhaDTO = new FigurinhaDTO();
         figurinhaDTO.setId(figurinha.getId());
+        figurinhaDTO.setAlbumId(figurinha.getAlbumId());
         figurinhaDTO.setImagem(figurinha.getImagem());
-        figurinhaDTO.setDescricao(figurinhaDTO.getDescricao());
+        figurinhaDTO.setDescricao(figurinha.getDescricao());
         figurinhaDTO.setRaridade(figurinha.getRaridade());
         figurinhaDTO.setPreco(figurinha.getPreco());
-
+        
         return figurinhaDTO;
     }
 
-    public FigurinhaEntity toEntity(FigurinhaDTO figurinha){
+    public FigurinhaEntity toEntity(FigurinhaDTO figurinha) {
+
         FigurinhaEntity figurinhaEntity = new FigurinhaEntity();
         figurinhaEntity.setId(figurinha.getId());
+        figurinhaEntity.setAlbumId(figurinha.getAlbumId());
         figurinhaEntity.setImagem(figurinha.getImagem());
         figurinhaEntity.setDescricao(figurinha.getDescricao());
         figurinhaEntity.setRaridade(figurinha.getRaridade());
@@ -41,4 +46,5 @@ public class FigurinhaMapper {
                 .map(this::toDTO)
                 .toList();
     }
+
 }

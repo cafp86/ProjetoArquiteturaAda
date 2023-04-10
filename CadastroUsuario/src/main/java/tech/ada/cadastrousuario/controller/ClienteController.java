@@ -3,15 +3,12 @@ package tech.ada.cadastrousuario.controller;
 import jakarta.persistence.EntityNotFoundException;
 import jakarta.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import tech.ada.cadastrousuario.service.ClienteService;
-import tech.ada.cadastrousuario.service.ClienteServiceImp;
-import tech.ada.cadastrousuario.model.dto.ClienteDTO;
 
 import java.util.List;
 import java.util.UUID;

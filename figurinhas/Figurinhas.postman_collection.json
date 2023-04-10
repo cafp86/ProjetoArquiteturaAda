@@ -1,0 +1,311 @@
+{
+	"info": {
+		"_postman_id": "90ef9582-0bef-474b-8fa0-7884c0a5c19d",
+		"name": "Figurinhas",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Health check",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{Authorization}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/health",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"health"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Criar Figurinha",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"albumId\": \"1\",\r\n    \"imagem\": \"Figurinha 10\",\r\n    \"descricao\": \"Esta é uma descrição para a figurinha\",\r\n    \"raridade\": 2,\r\n    \"preco\": 10.0\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/figurinhas",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"figurinhas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Criar várias Figurinhas",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    {\r\n        \"albumId\": \"1\",\r\n        \"imagem\": \"Figurinha 1\",\r\n        \"descricao\": \"Esta é uma descrição para a figurinha\",\r\n        \"raridade\": 0,\r\n        \"preco\": 10.0\r\n    },\r\n    {\r\n        \"albumId\": \"1\",\r\n        \"imagem\": \"Figurinha 2\",\r\n        \"descricao\": \"Esta é uma descrição para a figurinha\",\r\n        \"raridade\": 1,\r\n        \"preco\": 20.0\r\n    },\r\n    {\r\n        \"albumId\": \"1\",\r\n        \"imagem\": \"Figurinha 3\",\r\n        \"descricao\": \"Esta é uma descrição para a figurinha\",\r\n        \"raridade\": 2,\r\n        \"preco\": 30.0\r\n    },\r\n    {\r\n        \"albumId\": \"1\",\r\n        \"imagem\": \"Figurinha 4\",\r\n        \"descricao\": \"Esta é uma descrição para a figurinha\",\r\n        \"raridade\": 3,\r\n        \"preco\": 40.0\r\n    }\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/figurinhas/batch",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"figurinhas",
+						"batch"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Editar Figurinha",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{Authorization}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"imagem\": \"Figurinha Nova\",\r\n    \"descricao\": \"Nova descrição para a figurinha\",\r\n    \"raridade\": 3,\r\n    \"preco\": 20.0\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/figurinhas/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"figurinhas",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Remover Figurinha",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{Authorization}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/figurinhas/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"figurinhas",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listar Figurinhas",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{Authorization}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/figurinhas",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"figurinhas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Buscar Figurinha por Id",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{Authorization}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/figurinhas/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"figurinhas",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listar Figurinhas por Album",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{Authorization}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/figurinhas/album/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"figurinhas",
+						"album",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
